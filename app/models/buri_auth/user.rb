@@ -1,5 +1,5 @@
 module BuriAuth
-  class User < BuriAuth.resource_class.constantize
+  class User < BuriAuth.configuration.resource_class.constantize
     devise :database_authenticatable,
            :registerable,
            :recoverable,
