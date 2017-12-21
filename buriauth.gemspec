@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = BuriAuth::VERSION
   s.authors     = ['Olivier Robert']
   s.email       = ['dev@nimbl3.com']
-  s.homepage    = 'https://github.com/burigems/buriAuth'
+  s.homepage    = 'https://github.com/burigems/buriauth'
   s.summary     = 'Re-usable Devise-based authentication mountable engine'
   s.description = s.summary
   s.license     = 'MIT'
