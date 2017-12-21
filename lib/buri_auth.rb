@@ -1,5 +1,6 @@
+require 'devise'
 require 'buri_auth/engine'
 
 module BuriAuth
-  # Your code goes here...
+  mattr_accessor :resource_class
 end

@@ -8,5 +8,11 @@ module BuriAuth
       g.assets false
       g.helper false
     end
+
+    initializer 'buri_auth.action_controller' do
+      ActiveSupport.on_load :action_controller do
+        helper BuriAuth::Engine.helpers
+      end
+    end
   end
 end
