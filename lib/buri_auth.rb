@@ -3,20 +3,26 @@ require 'devise'
 require 'buri_auth/engine'
 
 module BuriAuth
-  class << self
-    attr_accessor :configuration
-  end
-
-  def self.configure
-    self.configuration ||= Configuration.new
-    yield(configuration)
-  end
-
   class Configuration
+    # The model in the host application from which the engine User model is extended
+    # It defaults to simply 'User'
+    # @return [String]
     attr_accessor :resource_class
 
     def initialize
       @resource_class = 'User'
     end
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configuration=(config)
+    @configuration = config
+  end
+
+  def self.configure
+    yield configuration
   end
 end
