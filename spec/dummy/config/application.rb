@@ -3,7 +3,8 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "buri_auth"
+
+require 'buriauth'
 
 module Dummy
   class Application < Rails::Application
