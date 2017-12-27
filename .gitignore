@@ -1,10 +1,5 @@
-# for a library or gem
-# .ruby-version
-# .ruby-gemset
-
-Gemfile.lock
 .bundle/
-log/*.log
+log/
 pkg/
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
@@ -16,9 +11,6 @@ spec/dummy/tmp/
 /_yardoc/
 /doc/
 /rdoc/
-
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
 
 # IDEs
 .idea/

@@ -8,7 +8,7 @@ AllCops:
     - 'Gemfile.lock'
     - 'Rakefile'
     - 'Guardfile'
-    - 'config/initializers/**/*'
+    - 'config/**/*'
     - 'spec/dummy/**/*'
   TargetRubyVersion: 2.4
 
@@ -22,15 +22,11 @@ Metrics/LineLength:
   Max: 120
   Exclude:
     - 'spec/**/*'
-    # most of the specs file have long line length but readability is still good
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    # most of the specs file have long block length but readability is still good
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/AsciiComments:
-  Enabled: false
