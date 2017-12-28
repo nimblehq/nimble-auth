@@ -1,3 +1,6 @@
+require 'devise'
+require_relative '../buri_auth'
+
 module BuriAuth
   class Engine < ::Rails::Engine
     isolate_namespace BuriAuth

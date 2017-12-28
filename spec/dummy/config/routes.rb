@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount BuriAuth::Engine => '/'
+  mount BuriAuth::Engine, at: '/'
 end

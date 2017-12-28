@@ -30,3 +30,5 @@ Metrics/BlockLength:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/AsciiComments:
+  Enabled: false

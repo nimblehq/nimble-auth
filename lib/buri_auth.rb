@@ -1,5 +1,4 @@
 # Override the standard devise views by requiring 'devise' before the engine
-require 'devise'
 require 'buri_auth/engine'
 
 module BuriAuth
@@ -8,21 +7,19 @@ module BuriAuth
     # It defaults to simply 'User'
     # @return [String]
     attr_accessor :resource_class
-
-    def initialize
-      @resource_class = 'User'
-    end
   end
 
-  def self.configuration
-    @configuration ||= Configuration.new
+  class << self
+    attr_accessor :config
   end
 
-  def self.configuration=(config)
-    @configuration = config
+  module_function
+
+  def configuration
+    @config ||= Configuration.new
   end
 
-  def self.configure
-    yield configuration
+  def setup
+    yield(configuration)
   end
 end
