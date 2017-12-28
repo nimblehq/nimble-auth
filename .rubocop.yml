@@ -1,0 +1,34 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - '*.gemspec'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'Rakefile'
+    - 'Guardfile'
+    - 'config/**/*'
+    - 'spec/dummy/**/*'
+  TargetRubyVersion: 2.4
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
