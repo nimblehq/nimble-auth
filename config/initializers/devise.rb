@@ -277,10 +277,8 @@ Devise.setup do |config|
   config.router_name = :buri_auth
 
   config.parent_controller = 'BuriAuth::ApplicationController'
-
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # FIXME: make the prefix dynamic
-  config.omniauth_path_prefix = '/auth/oauth'
+  # so you need to do it manually.
+  config.omniauth_path_prefix = '/oauth'
 end
