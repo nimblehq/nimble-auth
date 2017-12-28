@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker' # A library for generating fake data such as names, addresses, and phone numbers.
   s.add_development_dependency 'fabrication' # Fabrication generates objects in Ruby. Fabricators are schematics for your objects, and can be created as needed anywhere in your app or specs.
   s.add_development_dependency 'figaro'
+  s.add_development_dependency 'vcr'
 end
