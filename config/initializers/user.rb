@@ -11,7 +11,9 @@ Rails.application.configure do
              :validatable,
              :confirmable,
              :lockable,
-             :timeoutable
+             :timeoutable,
+             :omniauthable,
+             omniauth_providers: %i[facebook]
     end
   end
 end
