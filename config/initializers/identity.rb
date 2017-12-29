@@ -3,27 +3,22 @@ Rails.application.configure do
 
     # Extend the parent Model class
     BuriAuth.configuration.resource_identity_class.constantize.class_eval do
-      validates :uid, :provider, presence: true
-
       belongs_to :user
+
+      validates :uid, :provider, :user, presence: true
 
       class << self
         def find_with_oauth(oauth)
           find_by(uid: oauth[:uid], provider: oauth[:provider])
         end
 
-        def create_with_oauth(oauth)
+        def create_for(oauth, user)
           create!(
             uid: oauth[:uid],
             provider: oauth[:provider],
-            oauth_token: oauth.dig(:credentials, :token)
+            oauth_token: oauth.dig(:credentials, :token),
+            user_id: user.id
           )
-        end
-
-        def create_for(oauth, user)
-          identity = create_with_oauth(oauth)
-          identity.update!(user: user)
-          identity
         end
       end
     end

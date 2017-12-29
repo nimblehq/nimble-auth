@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails' # Rails testing engine
+  s.add_development_dependency 'shoulda-matchers' # Tests common Rails functionalities
   s.add_development_dependency 'rubocop' # A Ruby static code analyzer, based on the community Ruby style guide
   s.add_development_dependency 'brakeman' # A static analysis security vulnerability scanner for Ruby on Rails applications
   s.add_development_dependency 'rubycritic' # A Ruby code quality reporter
@@ -33,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'fabrication' # Fabrication generates objects in Ruby. Fabricators are schematics for your objects, and can be created as needed anywhere in your app or specs.
   s.add_development_dependency 'figaro'
   s.add_development_dependency 'vcr'
+  s.add_development_dependency 'webmock'
 end

@@ -7,7 +7,7 @@ module BuriAuth
     end
 
     def perform
-      # implement Strategy here ...
+      binding.pry
     end
   end
 end
