@@ -14,6 +14,10 @@ Rails.application.configure do
              :timeoutable,
              :omniauthable,
              omniauth_providers: %i[facebook]
+
+      def self.with_oauth(oauth)
+        find_by(email: oauth[:info]['email'])
+      end
     end
   end
 end

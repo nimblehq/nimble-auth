@@ -7,6 +7,7 @@ module BuriAuth
     # It defaults to simply 'User'
     # @return [String]
     attr_accessor :resource_class
+    attr_accessor :resource_identity_class
   end
 
   class << self
