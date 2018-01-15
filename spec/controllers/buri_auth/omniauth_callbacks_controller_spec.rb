@@ -1,17 +1,30 @@
 require 'spec_helper'
 
 RSpec.describe BuriAuth::OmniauthCallbacksController, type: :controller do
-  include Devise::Test::ControllerHelpers
   routes { BuriAuth::Engine.routes }
 
   describe 'POST #facebook' do
-    context 'signup', vcr: 'oauth/facebook' do
-      it 'creates a new user' do
+    context 'Valid Request', vcr: 'oauth/facebook' do
+      it 'renders the index template' do
         mock_oauth_for('facebook')
 
         post :facebook
 
-        # Implement expectations here ...
+        expect(response).to render_template(:index)
+      end
+
+      it 'signs in the user' do
+        mock_oauth_for('facebook')
+
+        post :facebook
+
+        expect(subject.current_user).to be_present
+      end
+    end
+
+    context 'Invalid Request', vcr: 'oauth/facebook' do
+      it 'renders the index template' do
+        # ...
       end
     end
   end

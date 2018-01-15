@@ -1,0 +1,6 @@
+en:
+  buriauth:
+    notice:
+      account_creation_error: Your account could not be created
+      account_creation_success: Your account was created successfully.
+      merged_account: Successfully linked account!

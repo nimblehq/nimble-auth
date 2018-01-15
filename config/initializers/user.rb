@@ -8,11 +8,7 @@ Rails.application.configure do
              :registerable,
              :recoverable,
              :rememberable,
-             :trackable,
-             :validatable,
              :confirmable,
-             :lockable,
-             :timeoutable,
              :omniauthable,
              omniauth_providers: %i[facebook]
 
