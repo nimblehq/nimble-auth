@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.10/me?access_token=0&fields=id,email,name,location,birthday,picture
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.5.0 x86_64) ruby/2.3.1p112
+      Host:
+      - graph.facebook.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "An active access token must be
+        used to query information about the current user."
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      X-Fb-Rev:
+      - '3176548'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - E2nAx+UwJGh
+      Facebook-Api-Version:
+      - v2.10
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      X-Fb-Debug:
+      - jfNsriUTQiVRSAi8+B1ehng78bLNYD9I8qxMFiaWFZWxWVu80akpTGEtHOyrdk4wJVuhplU8c932O11ijtL7BA==
+      Date:
+      - Tue, 25 Jul 2017 02:37:02 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '157'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAxXMsQqDMBAA0F85bm0oInTJ5iCFLp06l3ieNRRz9nJpFfHf
+        i/vjbciqoug3nDjn8GL02CQIZPHLEIg4ZzB5c4KpZIOOoWTuwQQ+hXWFmAbR
+        KViUBKGTYmAjAxVVTnZYPaNDW+djvjfFxnYhng+PDkl6Rl9fqsrh0JkG4mfs
+        0WNbp2Y5PX6364j7/gd6MSYzpwAAAA==
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 02:36:59 GMT
+recorded_with: VCR 3.0.3

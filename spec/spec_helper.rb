@@ -3,13 +3,15 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../dummy/config/environment.rb', __FILE__)
 
 require 'rspec/rails'
+require 'ffaker'
+require 'fabrication'
 
-Rails.backtrace_cleaner.remove_silencers!
-
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+Dir['spec/support/**/*.rb'].each { |f| require "#{Dir.pwd}/#{f}" }
 
 RSpec.configure do |config|
   config.color = true
+
+  config.fixture_path = 'spec/fabricators'
 
   config.use_transactional_fixtures = true
 

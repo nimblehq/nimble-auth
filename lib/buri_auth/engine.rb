@@ -1,4 +1,5 @@
 require 'devise'
+require 'omniauth-facebook'
 require_relative '../buri_auth'
 
 module BuriAuth
