@@ -18,9 +18,5 @@ module BuriAuth
         helper BuriAuth::Engine.helpers
       end
     end
-
-    def self.mounted_path
-      Rails.application.routes.routes.detect { |route| route.app&.app == self }&.path
-    end
   end
 end

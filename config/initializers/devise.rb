@@ -251,11 +251,20 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   #
-  # ====> Facebook
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
-                  scope: %w[email user_about_me user_birthday user_location].join(','),
-                  display: 'popup',
-                  image_size: 'large'
+  # ===> Facebook
+  config.omniauth :facebook,
+                  ENV['FACEBOOK_APP_ID'],
+                  ENV['FACEBOOK_APP_SECRET'],
+                  scope: 'email,user_location',
+                  info_fields: 'email,first_name,last_name,name,location',
+                  display: 'page',
+                  secure_image_url: true,
+                  image_size: 'large',
+                  client_options: {
+                    site: 'https://graph.facebook.com/v2.11',
+                    authorize_url: 'https://www.facebook.com/v2.11/dialog/oauth',
+                    token_url: 'oauth/access_token'
+                  }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -279,6 +288,6 @@ Devise.setup do |config|
   config.parent_controller = 'BuriAuth::ApplicationController'
   #
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually.
-  config.omniauth_path_prefix = '/oauth'
+  # so you need to do it manually. For the users scope, it would be:
+  # config.omniauth_path_prefix = '/my_engine/users/auth'
 end

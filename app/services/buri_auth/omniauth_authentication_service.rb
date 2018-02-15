@@ -1,5 +1,4 @@
 require 'buri_auth/omniauth/facebook'
-require 'buri_auth/omniauth/google_oauth2'
 
 module BuriAuth
   class OmniauthAuthenticationService
@@ -7,7 +6,7 @@ module BuriAuth
 
     def initialize(oauth)
       @oauth = oauth
-      @identity = Identity.includes(:user).find_by(uid: oauth[:uid], provider: oauth[:provider])
+      @identity = resource_identity_klass.includes(:user).find_by(uid: oauth[:uid], provider: oauth[:provider])
     end
 
     def call
@@ -27,7 +26,7 @@ module BuriAuth
     end
 
     def signup_strategy
-      user = User.find_by(email: oauth.dig(:info, :email))
+      user = resource_klass.find_by(email: oauth.dig(:info, :email))
 
       return new_provider_strategy(user) if user.present?
 
@@ -35,7 +34,7 @@ module BuriAuth
     end
 
     def new_provider_strategy(user)
-      identity = Identity.create_for(oauth: oauth, user: user)
+      identity = resource_identity_klass.create_for(oauth: oauth, user: user)
 
       respond_with(
         status: :ok,
@@ -46,8 +45,10 @@ module BuriAuth
 
     def new_user_strategy
       profile_details = provider_klass.new(oauth).to_h
-      user = User.new(profile_details)
-      @identity = Identity.create_for(oauth: oauth, user: user)
+      user = resource_klass.create!(profile_details)
+      user.confirm
+
+      @identity = resource_identity_klass.create_for(oauth: oauth, user: user)
 
       respond_with(status: :ok,
                    message: I18n.t('activerecord.notices.models.user.create'),
@@ -65,6 +66,14 @@ module BuriAuth
         message: message,
         status: status
       }
+    end
+
+    def resource_klass
+      BuriAuth.config.resource_class.constantize
+    end
+
+    def resource_identity_klass
+      BuriAuth.config.resource_identity_class.constantize
     end
   end
 end

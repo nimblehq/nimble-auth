@@ -7,11 +7,11 @@ describe 'routes for BuriAuth' do
     context 'Omniauth' do
       context 'Facebook' do
         it '[GET] Handles authentication request' do
-          expect(get: '/oauth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
+          expect(get: '/auth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
         end
 
         it '[POST] Handles authentication request' do
-          expect(post: '/oauth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
+          expect(post: '/auth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
         end
       end
     end

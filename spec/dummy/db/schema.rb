@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171229033245) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.text "avatar"
+    t.text "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171229033245) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

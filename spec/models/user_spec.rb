@@ -44,7 +44,7 @@ RSpec.describe BuriAuth.configuration.resource_class.constantize, type: :model d
             'email' => email
           }
         }
-        response = User.with_oauth(oauth_params)
+        response = described_class.with_oauth(oauth_params)
         expect(response).to eq(user)
       end
     end
@@ -56,7 +56,7 @@ RSpec.describe BuriAuth.configuration.resource_class.constantize, type: :model d
             'email' => FFaker::Internet.email
           }
         }
-        response = User.with_oauth(oauth_params)
+        response = described_class.with_oauth(oauth_params)
         expect(response).to eq(nil)
       end
     end

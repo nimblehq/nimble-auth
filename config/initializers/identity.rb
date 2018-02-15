@@ -8,11 +8,7 @@ Rails.application.configure do
       validates :uid, :provider, :user, presence: true
 
       class << self
-        def find_with_oauth(oauth)
-          find_by(uid: oauth[:uid], provider: oauth[:provider])
-        end
-
-        def create_for(oauth, user)
+        def create_for(oauth:, user:)
           create!(
             uid: oauth[:uid],
             provider: oauth[:provider],

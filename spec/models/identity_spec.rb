@@ -19,25 +19,11 @@ RSpec.describe BuriAuth.configuration.resource_identity_class.constantize, type:
     it { should validate_presence_of(:user) }
   end
 
-  describe '.find_with_oauth' do
-    it 'finds an identity when the params match' do
-      actual_identity = Fabricate(:identity)
-      received_identity = Identity.find_with_oauth(uid: actual_identity.uid, provider: actual_identity.provider)
-      expect(received_identity).to eq(actual_identity)
-    end
-
-    it 'returns nil when the params dont match' do
-      actual_identity = Fabricate.to_params(:identity)
-      received_identity = Identity.find_with_oauth(uid: actual_identity[:uid], provider: actual_identity[:provider])
-      expect(received_identity).to eq(nil)
-    end
-  end
-
   describe '.create_for' do
     it 'creates a new identity' do
       oauth_info = Fabricate.to_params(:identity).merge(credentials: { token: SecureRandom.urlsafe_base64 })
 
-      expect { Identity.create_for(oauth_info, Fabricate(:user)) }.to change(Identity, :count).by(1)
+      expect { described_class.create_for(oauth: oauth_info, user: Fabricate(:user)) }.to change(Identity, :count).by(1)
     end
   end
 end

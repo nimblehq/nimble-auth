@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.text :avatar
+      t.text :location
       t.timestamps null: false
 
       ## Database authenticatable
@@ -16,6 +17,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string   :confirmation_token, unique: true
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email
 
       ## Recoverable
       t.string   :reset_password_token
