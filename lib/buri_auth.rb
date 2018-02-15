@@ -3,12 +3,11 @@ require 'buri_auth/engine'
 
 module BuriAuth
   class Configuration
-    # The model in the host application from which the engine User model is extended
-    # It defaults to simply 'User'
-    # @return [String]
     attr_accessor :resource_class
     attr_accessor :resource_identity_class
     attr_accessor :omniauth_providers
+    attr_accessor :facebook_app_id
+    attr_accessor :facebook_app_secret
   end
 
   class << self

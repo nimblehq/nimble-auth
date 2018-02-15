@@ -21,10 +21,12 @@ module BuriAuth
 
     def after_authentication_success(auth_response)
       # App logic goes here
+      redirect_to root_path
     end
 
     def after_authentication_failure(auth_response)
       # App logic goes here
+      redirect_to root_path
     end
   end
 end
