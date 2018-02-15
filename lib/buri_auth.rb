@@ -8,6 +8,7 @@ module BuriAuth
     # @return [String]
     attr_accessor :resource_class
     attr_accessor :resource_identity_class
+    attr_accessor :omniauth_providers
   end
 
   class << self

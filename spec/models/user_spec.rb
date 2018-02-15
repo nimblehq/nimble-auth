@@ -16,6 +16,7 @@ RSpec.describe BuriAuth.configuration.resource_class.constantize, type: :model d
     it { should have_db_column(:confirmation_token).of_type(:string) }
     it { should have_db_column(:confirmed_at).of_type(:datetime) }
     it { should have_db_column(:confirmation_sent_at).of_type(:datetime) }
+    it { should have_db_column(:unconfirmed_email).of_type(:string) }
 
     ## Recoverable
     it { should have_db_column(:reset_password_token).of_type(:string) }
@@ -28,6 +29,18 @@ RSpec.describe BuriAuth.configuration.resource_class.constantize, type: :model d
     it { should have_db_column(:sign_in_count).of_type(:integer) }
     it { should have_db_column(:current_sign_in_at).of_type(:datetime) }
     it { should have_db_column(:last_sign_in_at).of_type(:datetime) }
+  end
+
+  describe 'Validations' do
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:email) }
+
+    context 'uniqueness' do
+      subject { Fabricate(:user) }
+
+      it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+    end
   end
 
   describe 'associations' do

@@ -1,8 +1,6 @@
 module BuriAuth
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    SUPPORTED_PROVIDERS = %i[facebook].freeze
-
-    SUPPORTED_PROVIDERS.each do |provider|
+    BuriAuth.config.omniauth_providers.each do |provider|
       define_method provider do
         authenticate
       end
