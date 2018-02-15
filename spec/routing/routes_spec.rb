@@ -24,15 +24,15 @@ describe 'routes for BuriAuth' do
 
     context 'Sessions' do
       it '[GET] Renders the login page' do
-        expect(get: '/signin').to route_to(controller: 'devise/sessions', action: 'new')
+        expect(get: '/signin').to route_to(controller: 'buri_auth/sessions', action: 'new')
       end
 
       it '[POST] Accepts login requests' do
-        expect(post: '/signin').to route_to(controller: 'devise/sessions', action: 'create')
+        expect(post: '/signin').to route_to(controller: 'buri_auth/sessions', action: 'create')
       end
 
       it '[GET] Accepts logout requests' do
-        expect(get: '/signout').to route_to(controller: 'devise/sessions', action: 'destroy')
+        expect(get: '/signout').to route_to(controller: 'buri_auth/sessions', action: 'destroy')
       end
     end
   end
