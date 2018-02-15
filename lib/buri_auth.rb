@@ -8,6 +8,8 @@ module BuriAuth
     attr_accessor :omniauth_providers
     attr_accessor :facebook_app_id
     attr_accessor :facebook_app_secret
+    attr_accessor :google_app_id
+    attr_accessor :google_app_secret
   end
 
   class << self

@@ -1,4 +1,5 @@
 require 'buri_auth/omniauth/facebook'
+require 'buri_auth/omniauth/google_oauth2'
 
 module BuriAuth
   class OmniauthAuthenticationService
