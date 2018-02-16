@@ -1,7 +1,6 @@
-# This migration comes from buri_auth (originally 20180216043905)
-class CreateUsers < ActiveRecord::Migration[5.1]
+class EditUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :users do |t|
+    change_table :users do |t|
       ## Attributes
       t.string :first_name
       t.string :last_name
