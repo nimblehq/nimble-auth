@@ -22,13 +22,23 @@ Metrics/LineLength:
   Max: 120
   Exclude:
     - 'spec/**/*'
+    - 'lib/buri_auth/**/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'lib/buri_auth/**/*'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/AsciiComments:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/buri_auth/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/buri_auth/**/*'

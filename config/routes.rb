@@ -1,6 +1,7 @@
 BuriAuth::Engine.routes.draw do
   CUSTOM_CONTROLLERS = {
-    omniauth_callbacks: 'buri_auth/omniauth_callbacks'
+    omniauth_callbacks: 'buri_auth/omniauth_callbacks',
+    sessions: 'buri_auth/sessions'
   }.freeze
 
   CUSTOM_PATH = {
