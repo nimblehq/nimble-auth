@@ -1,0 +1,10 @@
+// scss-lint:disable PseudoElement
+// scss-lint:disable VendorPrefix
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+  &::placeholder               {@content}
+}

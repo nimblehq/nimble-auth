@@ -1,0 +1,58 @@
+// Colors
+$brand-accent: (
+  primary: #1b79ea
+);
+
+$brand-gray: (
+  darker: #1f1f1f,
+  dark: #2a2a2a,
+  primary: #d5d8e2,
+  light: #f3f5fa,
+  lighter: #fdfdfd
+);
+
+$oauth-providers: google_oauth2, facebook;
+$brand-oauth-providers: (
+  facebook: #3967af,
+  google_oauth2: #ea4335
+);
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Body
+$body-bg: map-get($brand-gray, 'light');
+$body-color: #111;
+
+// Typography
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-size-root: 16px;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Border Radius
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+
+// Input
+$input-base-padding-y: 0.75rem;
+$input-base-padding-x: 0.75rem;
+$input-base-font-size: 0.875rem;
+$input-base-font-weight: 600;
+$input-base-line-height: 1.36;
+$input-border-radius: $border-radius;
+
+// Buttons
+$button-base-padding-y: 0.75rem;
+$button-base-padding-x: 1.5rem;
+$button-base-font-size: 0.875rem;
+$button-base-font-weight: 600;
+$button-base-line-height: 1.36;
+$button-border-radius: $border-radius;

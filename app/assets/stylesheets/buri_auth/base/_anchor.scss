@@ -1,0 +1,11 @@
+a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.36;
+  color: map-get($brand-gray, 'darker');
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html class="layout-default">
 <head>
-  <title>BuriAuth</title>
-  <%= stylesheet_link_tag    'buri_auth/application', media: 'all' %>
-  <%= javascript_include_tag 'buri_auth/application' %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= yield :page_title %></title>
+
+  <%= stylesheet_link_tag 'buri_auth/application', media: 'all' %>
+
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
-<%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
+  <%= render partial: 'buri_auth/shared/flash' %>
+
+  <%= javascript_include_tag 'buri_auth/application' %>
 </body>
 </html>

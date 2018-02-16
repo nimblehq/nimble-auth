@@ -1,0 +1,21 @@
+.layout-default {
+  body {
+    display: grid;
+    height: 100vH;
+    align-items: center;
+    justify-content: center;
+    background: $body-bg;
+  }
+
+  .auth-card {
+    width: 20rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 25rem;
+    }
+  }
+
+  .auth-link {
+    margin-top: 2rem;
+  }
+}
