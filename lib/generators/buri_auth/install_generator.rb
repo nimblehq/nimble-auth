@@ -23,20 +23,25 @@ module BuriAuth
     private
 
     def extend_models
+      say('Configuring Models...', Thor::Shell::Color::GREEN)
       extend_user
       extend_identity
     end
 
     def extend_migrations
+      say('Generating Migrations...', Thor::Shell::Color::GREEN)
       extend_user_migrations
       extend_identity_migrations
     end
 
     def add_initializer_template
+      say('Adding Initializer Template in Rails Config', Thor::Shell::Color::GREEN)
       copy_file 'initializer.rb', 'config/initializers/buriauth.rb'
+      say('Replace the Omniauth credentials to valid ones', Thor::Shell::Color::RED)
     end
 
     def mount_engine
+      say('Mounting Engine inside core app', Thor::Shell::Color::GREEN)
       inject_into_file 'config/routes.rb', after: "# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html\n" do
         "\tmount BuriAuth::Engine, at: '/auth'\n"
       end
