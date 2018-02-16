@@ -38,20 +38,9 @@ $ gem install buriauth
 
 ## Usage
 
-* Mounted into the host application:
-
-```ruby
-# config/routes.rb
-Rails.application.routes.draw do
-  mount BuriAuth::Engine, at: '/'
-
-  root 'dashboard#index'
-end
+* Setup Buriauth
 ```
-
-* Generate database migrations
-```
-bin/rails generate buri_auth_migration
+rails generate buri_auth:install
 rake db:migrate
 ```
 
