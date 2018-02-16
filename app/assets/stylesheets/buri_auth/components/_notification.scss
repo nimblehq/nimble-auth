@@ -1,0 +1,46 @@
+.notification {
+  @include keyframes(fadeOut) {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @include animation(3s, 1s, fadeOut);
+
+  padding: 1.0625rem 1rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+
+  color: map-get($brand-gray, 'darker');
+  background-color: #fff;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(md) {
+    max-width: 30vw;
+  }
+
+  &__message {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  @mixin notification-color-modifier ($name, $color, $background-color) {
+    &--#{$name} {
+      color: $color;
+      background-color: $background-color;
+    }
+  }
+
+  @include notification-color-modifier(danger, #fff, #ff5a60);
+}

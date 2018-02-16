@@ -1,0 +1,11 @@
+<% flash.each do |type, message| %>
+  <% next unless message.present? %>
+
+  <div class="notification">
+    <div class="notification--<%= type %>">
+      <span class="notification__message">
+        <%= message %>
+      </span>
+    </div>
+  </div>
+<% end %>

@@ -17,6 +17,8 @@
     <%= yield %>
   </main>
 
+  <%= render partial: 'buri_auth/shared/flash' %>
+
   <%= javascript_include_tag 'buri_auth/application' %>
 </body>
 </html>
