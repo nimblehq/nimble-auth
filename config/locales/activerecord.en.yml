@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    notices:
+      models:
+        user:
+          create: Your account was created successfully.
+        identity:
+          create_for_existing_user: New credentials added to your existing account.

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20171229033245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", null: false
-    t.string "username", null: false
+    t.string "username"
     t.string "encrypted_password", default: "", null: false
     t.string "confirmation_token"
     t.datetime "confirmed_at"

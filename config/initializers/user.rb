@@ -13,7 +13,7 @@ Rails.application.configure do
              :rememberable,
              :confirmable,
              :omniauthable,
-             omniauth_providers: %i[facebook]
+             omniauth_providers: BuriAuth.config.omniauth_providers
 
       def self.with_oauth(oauth)
         find_by(email: oauth[:info]['email'])
