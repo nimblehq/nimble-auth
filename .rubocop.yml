@@ -10,6 +10,7 @@ AllCops:
     - 'Guardfile'
     - 'config/**/*'
     - 'spec/dummy/**/*'
+    - 'lib/generators/**/*'
   TargetRubyVersion: 2.4
 
 Rails:

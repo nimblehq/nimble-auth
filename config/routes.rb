@@ -10,11 +10,13 @@ BuriAuth::Engine.routes.draw do
     sign_out: 'signout'
   }.freeze
 
-  # ==> Mount Devise Engine
-  devise_for :users,
-             module: :devise,
-             path: '/',
-             class_name: BuriAuth.configuration.resource_class,
-             controllers: CUSTOM_CONTROLLERS,
-             path_names: CUSTOM_PATH
+  if BuriAuth.configuration.resource_class.present?
+    # ==> Mount Devise Engine
+    devise_for BuriAuth.configuration.resource_class.pluralize.downcase.to_sym,
+               module: :devise,
+               path: '/',
+               class_name: BuriAuth.configuration.resource_class,
+               controllers: CUSTOM_CONTROLLERS,
+               path_names: CUSTOM_PATH
+  end
 end

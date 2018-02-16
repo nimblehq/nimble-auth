@@ -1,7 +1,6 @@
-# This migration comes from buri_auth (originally 20180216043941)
-class CreateIdentities < ActiveRecord::Migration[5.1]
+class EditIdentities < ActiveRecord::Migration[5.1]
   def change
-    create_table :identities do |t|
+    change_table :identities do |t|
       ## Attributes
       t.string :uid, null: false
       t.string :provider, null: false
