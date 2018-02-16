@@ -13,8 +13,9 @@
 
   padding: 1.0625rem 1rem;
   position: fixed;
-  bottom: 1rem;
+  top: 1rem;
   right: 1rem;
+  left: 1rem;
   z-index: 10;
 
   color: map-get($brand-gray, 'darker');
@@ -23,6 +24,7 @@
 
   @include media-breakpoint-up(md) {
     max-width: 30vw;
+    left: auto;
   }
 
   &__message {
@@ -36,11 +38,14 @@
   }
 
   @mixin notification-color-modifier ($name, $color, $background-color) {
+    background-color: $background-color;
+
     &--#{$name} {
       color: $color;
-      background-color: $background-color;
     }
   }
 
-  @include notification-color-modifier(danger, #fff, #ff5a60);
+  @include notification-color-modifier(alert, #fff, #ff5a60);
+  @include notification-color-modifier(notice, #fff, #00ca9f);
+  @include notification-color-modifier(success, #fff, #00ca9f);
 }
