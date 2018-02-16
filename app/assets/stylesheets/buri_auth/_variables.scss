@@ -41,8 +41,16 @@ $line-height-base: 1.5;
 $border-radius: 0.375rem;
 $border-radius-sm: 0.25rem;
 
+// Input
+$input-base-padding-y: 0.75rem;
+$input-base-padding-x: 0.75rem;
+$input-base-font-size: 0.875rem;
+$input-base-font-weight: 600;
+$input-base-line-height: 1.36;
+$input-border-radius: $border-radius;
+
 // Buttons
-$button-base-padding-y: 0.5rem;
+$button-base-padding-y: 0.75rem;
 $button-base-padding-x: 1.5rem;
 $button-base-font-size: 0.875rem;
 $button-base-font-weight: 600;

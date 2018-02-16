@@ -24,7 +24,7 @@ form {
     display: block;
     margin-bottom: 0.75rem;
     font-size: 0.75rem;
-    font-weight: $button-base-font-weight;
+    font-weight: $input-base-font-weight;
     line-height: 0.875;
     color: map-get($brand-gray, 'lightest');
     text-transform: uppercase;
@@ -41,15 +41,15 @@ form {
     width: 100%;
     box-sizing: border-box;
 
-    padding: 0.5rem;
-
-    font-size: $button-base-font-size;
-    font-weight: $button-base-font-weight;
-    line-height: $button-base-line-height;
+    padding: $input-base-padding-y $input-base-padding-x;
+    
+    font-size: $input-base-font-size;
+    font-weight: $input-base-font-weight;
+    line-height: $input-base-line-height;
 
     color: map-get($brand-gray, 'dark');
     border: 2px solid map-get($brand-gray, 'primary');
-    border-radius: $button-border-radius;
+    border-radius: $input-border-radius;
 
     &:focus {
       border-color: map-get($brand-accent, 'primary');

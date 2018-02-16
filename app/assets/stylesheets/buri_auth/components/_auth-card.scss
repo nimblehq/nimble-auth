@@ -2,7 +2,6 @@
   padding: 1rem;
 
   background-color: #fff;
-
   border-radius: 0.25rem;
   box-shadow: 0 0.5rem 0.875rem 0 rgba(0, 0, 0, 0.2);
 
@@ -22,21 +21,6 @@
 
   &__provider {
     text-align: center;
-    margin-bottom: 3.125rem;
-  }
-}
-
-// Form
-
-.auth-card .form {
-  &__body {
-    padding: 0;
-  }
-
-  &__footer {
-    display: grid;
-    padding: 1.8125rem 0 0;
-    text-align: left;
-    justify-content: right;
+    margin-bottom: 2rem;
   }
 }

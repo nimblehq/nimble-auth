@@ -1,6 +1,8 @@
 .btn-auth {
   @extend .btn;
 
+  text-decoration: none!important;
+
   & + .btn-auth {
     margin-top: 0.75rem;
   }
@@ -8,8 +10,8 @@
   @each $oauth-provider in $oauth-providers {
     &--#{$oauth-provider} {
       $background: map-get($brand-oauth-providers, $oauth-provider);
-      $hover-background: darken(map-get($brand-oauth-providers, $oauth-provider), 5%);
-      $active-background: darken(map-get($brand-oauth-providers, $oauth-provider), 5%);
+      $hover-background: darken(map-get($brand-oauth-providers, $oauth-provider), 10%);
+      $active-background: darken(map-get($brand-oauth-providers, $oauth-provider), 20%);
 
       width: 100%;
       color: #fff!important;
