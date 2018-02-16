@@ -49,6 +49,12 @@ Rails.application.routes.draw do
 end
 ```
 
+* Generate database migrations
+```
+bin/rails generate buri_auth_migration
+rake db:migrate
+```
+
 ## License
 
 This project is Copyright (c) 2014-2018 Nimbl3 Ltd. It is free software,
