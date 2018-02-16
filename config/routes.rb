@@ -1,3 +1,7 @@
+# TODO: Review if it's the best way to have devise error messages from Devise
+# https://groups.google.com/forum/#!topic/plataformatec-devise/VhnVPh9sJCI
+require_relative '../lib/buri_auth/devise_custom_failure'
+
 BuriAuth::Engine.routes.draw do
   CUSTOM_CONTROLLERS = {
     omniauth_callbacks: 'buri_auth/omniauth_callbacks',
