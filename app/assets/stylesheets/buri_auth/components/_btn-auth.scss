@@ -1,0 +1,30 @@
+.btn-auth {
+  @extend .btn;
+
+  & + .btn-auth {
+    margin-top: 0.75rem;
+  }
+
+  @each $oauth-provider in $oauth-providers {
+    &--#{$oauth-provider} {
+      $background: map-get($brand-oauth-providers, $oauth-provider);
+      $hover-background: darken(map-get($brand-oauth-providers, $oauth-provider), 5%);
+      $active-background: darken(map-get($brand-oauth-providers, $oauth-provider), 5%);
+
+      width: 100%;
+      color: #fff!important;
+      background-color: $background!important;
+
+      border: 0;
+
+      &:focus,
+      &:hover {
+        background-color: $hover-background!important;
+      }
+
+      &:active {
+        background-color: $active-background!important;
+      }
+    }
+  }
+}

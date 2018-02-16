@@ -1,0 +1,9 @@
+.layout-default {
+  body {
+    display: grid;
+    height: 100vH;
+    align-items: center;
+    justify-content: center;
+    background: $body-bg;
+  }
+}

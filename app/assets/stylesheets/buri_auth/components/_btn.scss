@@ -1,0 +1,99 @@
+@mixin button-size-modifier($name,
+                            $padding: $button-base-padding-y $button-base-padding-x,
+                            $font-size: $button-base-font-size,
+                            $font-weight: $button-base-font-weight,
+                            $font-line-height: $button-base-line-height) {
+  &--#{$name} {
+    min-width: 7.5rem;
+    padding: $padding;
+
+    font-size: $font-size;
+    font-weight: $button-base-font-weight;
+    line-height: $button-base-line-height;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center ;
+
+  padding: $button-base-padding-y $button-base-padding-x;
+
+  font-size: $button-base-font-size;
+  font-weight: $button-base-font-weight;
+  line-height: $button-base-line-height;
+
+  color: #000;
+  cursor: pointer;
+  background-color: #fff;
+
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  outline: 0;
+  transition: background-color .2s ease-in-out;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: map-get($brand-gray, 'light');
+  }
+
+  // Button Sizes
+  @include button-size-modifier(md);
+  @include button-size-modifier(lg, 0.875rem 1.5rem, 0.9375rem, $button-base-font-weight, 1.25);
+  @include button-size-modifier(xl, 1.25rem, 1.125rem);
+}
+
+// Alternate Button Types
+// --------------------------------------------------
+.btn.btn--primary {
+  $color: #fff;
+  $background: map-get($brand-accent, 'primary');
+  $hover-background: darken(map-get($brand-accent, 'primary'), 5%);
+  $active-background: darken(map-get($brand-accent, 'primary'), 25%);
+
+  color: $color;
+  background-color: $background;
+
+  border: 0;
+
+  &:focus,
+  &:hover {
+    background-color: $hover-background;
+  }
+
+  &:active {
+    background-color: $active-background;
+  }
+}
+
+.btn.btn--disabled,
+.btn[disabled] {
+  color: map-get($brand-gray, 'light');
+  cursor: not-allowed;
+  background-color: map-get($brand-gray, 'light');
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: map-get($brand-gray, 'light');
+  }
+}
+
+.btn.btn--link {
+  padding: 0;
+
+  background-color: transparent;
+  border-radius: 0;
+
+  text-decoration: underline;
+}
+
+.btn.btn--link-primary {
+  color: map-get($brand-accent, 'primary');
+
+  &:active {
+    color: darken(map-get($brand-accent, 'primary'), 5%);
+  }
+}

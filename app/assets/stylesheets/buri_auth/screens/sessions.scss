@@ -1,0 +1,19 @@
+.sessions.new {
+  .auth-header,
+  .auth-card {
+    width: 20rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 25rem;
+    }
+  }
+}
+
+.sessions.new .auth-header {
+  margin-bottom: 1.325rem;
+  text-align: center;
+}
+
+.sessions.new .alert {
+  margin-top: 1.125rem;
+}
