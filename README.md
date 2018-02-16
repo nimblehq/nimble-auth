@@ -51,8 +51,8 @@ end
 
 ## License
 
-This project is Copyright (c) 2014-2017 Nimbl3 Ltd. It is free software,
-and may be redistributed under the terms specified the [LICENSE] file.
+This project is Copyright (c) 2014-2018 Nimbl3 Ltd. It is free software,
+and may be redistributed under the terms specified the [LICENSE](LICENSE) file.
 
 ## About
 
