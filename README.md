@@ -1,5 +1,7 @@
 # BuriAuth
 
+[![Build Status](https://semaphoreci.com/api/v1/nimbl3/buriauth/branches/development/badge.svg)](https://semaphoreci.com/nimbl3/buriauth)
+
 In each project, authentication is almost always required and Devise is almost always the go-to gem to implement such 
 functionality. While Devise is easy to use and configure, its codebase lives in the core of the application and often needs 
 tinkering. So this `gem` is modular approach to provide a ready-to-use authentication in any Ruby on Rails application. 
