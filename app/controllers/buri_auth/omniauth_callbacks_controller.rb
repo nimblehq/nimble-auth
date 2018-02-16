@@ -19,6 +19,7 @@ module BuriAuth
       end
     end
 
+    # rubocop:disable Lint/UnusedMethodArgument
     def after_authentication_success(auth_response)
       # App logic goes here
       redirect_to root_path
@@ -28,5 +29,6 @@ module BuriAuth
       # App logic goes here
       redirect_to root_path
     end
+    # rubocop:enable Lint/UnusedMethodArgument
   end
 end

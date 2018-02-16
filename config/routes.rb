@@ -1,6 +1,3 @@
-require 'buri_auth/user'
-require 'buri_auth/identity'
-
 BuriAuth::Engine.routes.draw do
   CUSTOM_CONTROLLERS = {
     omniauth_callbacks: 'buri_auth/omniauth_callbacks',
@@ -12,9 +9,6 @@ BuriAuth::Engine.routes.draw do
     sign_up: 'signup',
     sign_out: 'signout'
   }.freeze
-
-  # BuriAuth::User.extend_model
-  # BuriAuth::Identity.extend_model
 
   # ==> Mount Devise Engine
   devise_for :users,

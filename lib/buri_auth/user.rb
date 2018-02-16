@@ -7,7 +7,7 @@ module BuriAuth
       BuriAuth.configuration.resource_class.constantize.class_eval do
         has_many :identities, dependent: :destroy
 
-        validates :first_name, :last_name, :email, presence: true
+        validates :email, presence: true
         validates :email, uniqueness: true
 
         devise :database_authenticatable,

@@ -35,7 +35,6 @@ module BuriAuth
   def after_setup
     extend_models
     setup_devise
-    # create_route_helpers
   end
 
   def setup_devise
@@ -45,9 +44,5 @@ module BuriAuth
   def extend_models
     BuriAuth::User.extend_model
     BuriAuth::Identity.extend_model
-  end
-
-  def create_route_helpers
-    configuration.omniauth_providers.each { |provider| BuriAuth::OmniauthHelper.configure_omniauth_provider(provider) }
   end
 end
