@@ -1,5 +1,6 @@
 require 'devise'
 require 'omniauth-facebook'
+require 'omniauth-google-oauth2'
 require_relative '../buri_auth'
 
 module BuriAuth
