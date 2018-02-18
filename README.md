@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <a href='https://semaphoreci.com/nimbl3/buriauth'> <img src='https://semaphoreci.com/api/v1/nimbl3/buriauth/branches/chore-setup-ci/badge.svg' alt='Build Status'></a>
+    <a href='https://semaphoreci.com/nimbl3/buriauth'> <img src='https://semaphoreci.com/api/v1/nimbl3/buriauth/branches/development/badge.svg' alt='Build Status'></a>
 </p>
 
 ---
