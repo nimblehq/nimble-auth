@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe BuriAuth::OmniauthAuthenticationService, type: :service do
+RSpec.describe NimbleAuth::OmniauthAuthenticationService, type: :service do
   describe '#call' do
     context 'new user' do
       context 'Valid params' do

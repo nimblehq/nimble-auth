@@ -1,10 +1,10 @@
-module BuriAuth
+module NimbleAuth
   module Identity
     module_function
 
     def extend_model
       # Extend the parent Model class
-      BuriAuth.configuration.resource_identity_class.constantize.class_eval do
+      NimbleAuth.configuration.resource_identity_class.constantize.class_eval do
         belongs_to :user
 
         validates :uid, :provider, :user, presence: true

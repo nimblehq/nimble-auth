@@ -1,6 +1,6 @@
-module BuriAuth
+module NimbleAuth
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    BuriAuth.config.omniauth_providers.each do |provider|
+    NimbleAuth.config.omniauth_providers.each do |provider|
       define_method provider do
         authenticate
       end

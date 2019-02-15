@@ -2,4 +2,4 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
-//= link buri_auth_manifest.js
+//= link nimble_auth_manifest.js

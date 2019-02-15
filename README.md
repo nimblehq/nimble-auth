@@ -1,13 +1,9 @@
 <p align="center">
-  <img alt="Burigems logo" src="https://github.com/burigems/assets/blob/master/burigems-logo.png?raw=true" width="400"/>
+    <strong>Nimble Auth - Modern ready-to-use auhentication engine</strong>
 </p>
 
 <p align="center">
-    <strong>BuriAuth - Modern ready-to-use auhentication engine</strong>
-</p>
-
-<p align="center">
-    <a href='https://semaphoreci.com/nimbl3/buriauth'> <img src='https://semaphoreci.com/api/v1/nimbl3/buriauth/branches/development/badge.svg' alt='Build Status'></a>
+    <a href='https://semaphoreci.com/nimblehq/nimble-auth'> <img src='https://semaphoreci.com/api/v1/nimblehq/nimble-auth/branches/development/badge.svg' alt='Build Status'></a>
 </p>
 
 ---
@@ -21,7 +17,7 @@ tinkering. So this `gem` is a modular approach to provide a ready-to-use authent
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'buriauth'
+gem 'nimble-auth'
 ```
 
 And then execute:
@@ -33,30 +29,32 @@ $ bundle
 Or install it yourself as:
 
 ```bash
-$ gem install buriauth
+$ gem install nimble-auth
 ```
 
 ## Usage
 
-* Setup Buriauth
+* Setup Nimble Auth
 ```
-rails generate buri_auth:install
+rails generate nimble_auth:install
 rake db:migrate
 ```
 
 ## License
 
-This project is Copyright (c) 2014-2018 Nimbl3 Ltd. It is free software,
-and may be redistributed under the terms specified the [LICENSE](LICENSE) file.
+This project is Copyright (c) 2014-2019 Nimble. It is free software,
+and may be redistributed under the terms specified in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
 
 ## About
 
-![Nimbl3](https://dtvm7z6brak4y.cloudfront.net/logo/logo-repo-readme.jpg)
+![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
 
-This project is maintained and funded by Nimbl3 Ltd.
+This project is maintained and funded by Nimble.
 
 We love open source and do our part in sharing our work with the community!
 See [our other projects][community] or [hire our team][hire] to help build your product.
 
-[community]: https://github.com/nimbl3
-[hire]: https://nimbl3.com/
+[community]: https://github.com/nimblehq
+[hire]: https://nimblehq.co/

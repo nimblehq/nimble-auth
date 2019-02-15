@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe BuriAuth.configuration.resource_class.constantize, type: :model do
+RSpec.describe NimbleAuth.configuration.resource_class.constantize, type: :model do
   describe 'db columns' do
     ## Attributes
     it { should have_db_column(:first_name).of_type(:string) }

@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-require 'buriauth'
+require 'NimbleAuth'
 
 module Dummy
   class Application < Rails::Application

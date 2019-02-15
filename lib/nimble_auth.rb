@@ -1,11 +1,11 @@
 # Override the standard devise views by requiring 'devise' before the engine
-require 'buri_auth/engine'
-require 'buri_auth/omniauth_helper'
-require 'buri_auth/devise_setup'
-require 'buri_auth/user'
-require 'buri_auth/identity'
+require 'nimble_auth/engine'
+require 'nimble_auth/omniauth_helper'
+require 'nimble_auth/devise_setup'
+require 'nimble_auth/user'
+require 'nimble_auth/identity'
 
-module BuriAuth
+module NimbleAuth
   class Configuration
     attr_accessor :resource_class
     attr_accessor :resource_identity_class
@@ -54,11 +54,11 @@ module BuriAuth
   end
 
   def setup_devise
-    BuriAuth::DeviseSetup.setup_with(configuration)
+    NimbleAuth::DeviseSetup.setup_with(configuration)
   end
 
   def extend_models
-    BuriAuth::User.extend_model if BuriAuth.configuration.resource_class.present?
-    BuriAuth::Identity.extend_model if BuriAuth.configuration.resource_identity_class.present?
+    NimbleAuth::User.extend_model if NimbleAuth.configuration.resource_class.present?
+    NimbleAuth::Identity.extend_model if NimbleAuth.configuration.resource_identity_class.present?
   end
 end

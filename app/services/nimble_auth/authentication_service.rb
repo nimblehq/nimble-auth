@@ -1,6 +1,6 @@
-require 'buri_auth/omniauth_authentication_service'
+require 'nimble_auth/omniauth_authentication_service'
 
-module BuriAuth
+module NimbleAuth
   class AuthenticationService
     attr_reader :auth_params, :auth_type
 
@@ -16,7 +16,7 @@ module BuriAuth
     private
 
     def auth_klass
-      "BuriAuth::#{auth_type.titleize}AuthenticationService".constantize
+      "NimbleAuth::#{auth_type.titleize}AuthenticationService".constantize
     end
   end
 end

@@ -3,11 +3,11 @@ require 'omniauth-facebook'
 require 'omniauth-google-oauth2'
 require 'sass-rails'
 require 'normalize-rails'
-require_relative '../buri_auth'
+require_relative '../nimble_auth'
 
-module BuriAuth
+module NimbleAuth
   class Engine < ::Rails::Engine
-    isolate_namespace BuriAuth
+    isolate_namespace NimbleAuth
 
     config.generators do |g|
       g.test_framework :rspec, fixture: false
@@ -16,9 +16,9 @@ module BuriAuth
       g.helper false
     end
 
-    initializer 'buri_auth.action_controller' do
+    initializer 'nimble_auth.action_controller' do
       ActiveSupport.on_load :action_controller do
-        helper BuriAuth::Engine.helpers
+        helper NimbleAuth::Engine.helpers
       end
     end
   end

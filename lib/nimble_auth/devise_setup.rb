@@ -1,7 +1,7 @@
 require 'devise'
 require 'devise/orm/active_record'
 
-module BuriAuth
+module NimbleAuth
   module DeviseSetup
     module_function
 
@@ -283,7 +283,7 @@ module BuriAuth
         # change the failure app, you can configure them inside the config.warden block.
 
         config.warden do |manager|
-          manager.failure_app = BuriAuth::DeviseCustomFailure
+          manager.failure_app = NimbleAuth::DeviseCustomFailure
         end
 
         # ==> Mountable engine configurations
@@ -294,9 +294,9 @@ module BuriAuth
         #     mount MyEngine, at: '/my_engine'
         #
         # The router that invoked `devise_for`, in the example above, would be:
-        config.router_name = :buri_auth
+        config.router_name = :nimble_auth
 
-        config.parent_controller = 'BuriAuth::ApplicationController'
+        config.parent_controller = 'NimbleAuth::ApplicationController'
         #
         # When using OmniAuth, Devise cannot automatically set OmniAuth path,
         # so you need to do it manually. For the users scope, it would be:

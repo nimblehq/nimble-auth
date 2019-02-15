@@ -1,10 +1,10 @@
-module BuriAuth
+module NimbleAuth
   class InstallGenerator < Rails::Generators::Base
     source_root File.expand_path('../../templates', __FILE__)
 
     CUSTOM_CONTROLLERS = {
-      omniauth_callbacks: 'buri_auth/omniauth_callbacks',
-      sessions: 'buri_auth/sessions'
+      omniauth_callbacks: 'nimble_auth/omniauth_callbacks',
+      sessions: 'nimble_auth/sessions'
     }.freeze
 
     CUSTOM_PATH = {
@@ -36,14 +36,14 @@ module BuriAuth
 
     def add_initializer_template
       say('Adding Initializer Template in Rails Config', Thor::Shell::Color::GREEN)
-      copy_file 'initializer.rb', 'config/initializers/buriauth.rb'
+      copy_file 'initializer.rb', 'config/initializers/NimbleAuth.rb'
       say('Replace the Omniauth credentials to valid ones', Thor::Shell::Color::RED)
     end
 
     def mount_engine
       say('Mounting Engine inside core app', Thor::Shell::Color::GREEN)
       inject_into_file 'config/routes.rb', after: "# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html\n" do
-        "\tmount BuriAuth::Engine, at: '/auth'\n"
+        "\tmount NimbleAuth::Engine, at: '/auth'\n"
       end
     end
 
