@@ -7,9 +7,7 @@ Bundler.require(*Rails.groups)
 require 'nimble_auth'
 
 module Dummy
-  class Applicatio
-
-    n < Rails::Application
+  class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
