@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-require 'nimble_auth'
+require 'nimble-auth'
 
 module Dummy
   class Application < Rails::Application
