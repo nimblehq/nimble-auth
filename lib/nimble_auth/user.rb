@@ -16,7 +16,7 @@ module NimbleAuth
                :rememberable,
                :confirmable,
                :omniauthable,
-               omniauth_providers: NimbleAuth.config.omniauth_providers
+               omniauth_providers: NimbleAuth.configuration.omniauth_providers
 
         def self.with_oauth(oauth)
           find_by(email: oauth[:info]['email'])

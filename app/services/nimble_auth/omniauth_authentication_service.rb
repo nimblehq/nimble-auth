@@ -70,11 +70,11 @@ module NimbleAuth
     end
 
     def resource_klass
-      NimbleAuth.config.resource_class.constantize
+      NimbleAuth.configuration.resource_class.constantize
     end
 
     def resource_identity_klass
-      NimbleAuth.config.resource_identity_class.constantize
+      NimbleAuth.configuration.resource_identity_class.constantize
     end
   end
 end

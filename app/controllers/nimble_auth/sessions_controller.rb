@@ -14,11 +14,11 @@ module NimbleAuth
 
     private
 
-    def after_sign_in_redirect_path(_)
+    def after_sign_in_redirect_path(_resource)
       root_path
     end
 
-    def after_sign_out_redirect_path(_)
+    def after_sign_out_redirect_path(_resource)
       new_user_session_path
     end
 
