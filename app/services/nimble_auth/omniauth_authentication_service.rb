@@ -1,7 +1,7 @@
-require 'buri_auth/omniauth/facebook'
-require 'buri_auth/omniauth/google_oauth2'
+require 'nimble_auth/omniauth/facebook'
+require 'nimble_auth/omniauth/google_oauth2'
 
-module BuriAuth
+module NimbleAuth
   class OmniauthAuthenticationService
     attr_reader :oauth, :identity
 
@@ -57,7 +57,7 @@ module BuriAuth
     end
 
     def provider_klass
-      "BuriAuth::Omniauth::#{oauth[:provider].camelcase}".constantize
+      "NimbleAuth::Omniauth::#{oauth[:provider].camelcase}".constantize
     end
 
     def respond_with(status: nil, message: nil, identity: nil)
@@ -70,11 +70,11 @@ module BuriAuth
     end
 
     def resource_klass
-      BuriAuth.config.resource_class.constantize
+      NimbleAuth.configuration.resource_class.constantize
     end
 
     def resource_identity_klass
-      BuriAuth.config.resource_identity_class.constantize
+      NimbleAuth.configuration.resource_identity_class.constantize
     end
   end
 end

@@ -1,2 +1,2 @@
-//= link_directory ../javascripts/buri_auth .js
-//= link_directory ../stylesheets/buri_auth .css
+//= link_directory ../javascripts/nimble_auth .js
+//= link_directory ../stylesheets/nimble_auth .css

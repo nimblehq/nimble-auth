@@ -1,5 +1,5 @@
 # Extracts user_profile data from auth response
-module BuriAuth
+module NimbleAuth
   module Omniauth
     class GoogleOauth2
       attr_reader :oauth

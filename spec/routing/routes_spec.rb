@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe 'routes for BuriAuth' do
-  routes { BuriAuth::Engine.routes }
+describe 'routes for NimbleAuth' do
+  routes { NimbleAuth::Engine.routes }
 
   describe 'Custom Routes' do
     context 'Omniauth' do
       context 'Facebook' do
         it '[GET] Handles authentication request' do
-          expect(get: '/auth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
+          expect(get: '/auth/facebook/callback').to route_to(controller: 'nimble_auth/omniauth_callbacks', action: 'facebook')
         end
 
         it '[POST] Handles authentication request' do
-          expect(post: '/auth/facebook/callback').to route_to(controller: 'buri_auth/omniauth_callbacks', action: 'facebook')
+          expect(post: '/auth/facebook/callback').to route_to(controller: 'nimble_auth/omniauth_callbacks', action: 'facebook')
         end
       end
     end
@@ -24,15 +24,15 @@ describe 'routes for BuriAuth' do
 
     context 'Sessions' do
       it '[GET] Renders the login page' do
-        expect(get: '/signin').to route_to(controller: 'buri_auth/sessions', action: 'new')
+        expect(get: '/signin').to route_to(controller: 'nimble_auth/sessions', action: 'new')
       end
 
       it '[POST] Accepts login requests' do
-        expect(post: '/signin').to route_to(controller: 'buri_auth/sessions', action: 'create')
+        expect(post: '/signin').to route_to(controller: 'nimble_auth/sessions', action: 'create')
       end
 
       it '[GET] Accepts logout requests' do
-        expect(get: '/signout').to route_to(controller: 'buri_auth/sessions', action: 'destroy')
+        expect(get: '/signout').to route_to(controller: 'nimble_auth/sessions', action: 'destroy')
       end
     end
   end

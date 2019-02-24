@@ -1,6 +1,7 @@
-BuriAuth.setup do |config|
+NimbleAuth.setup do |config|
   config.resource_class = 'User'
   config.resource_identity_class = 'Identity'
+
   config.omniauth_providers = %i[facebook google_oauth2].freeze
   config.facebook_app_id = "facebook_app_id"
   config.facebook_app_secret = "facebook_app_secret"

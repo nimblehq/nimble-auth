@@ -1,6 +1,6 @@
-module BuriAuth
+module NimbleAuth
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    BuriAuth.config.omniauth_providers.each do |provider|
+    NimbleAuth.config.omniauth_providers.each do |provider|
       define_method provider do
         authenticate
       end
@@ -19,16 +19,14 @@ module BuriAuth
       end
     end
 
-    # rubocop:disable Lint/UnusedMethodArgument
-    def after_authentication_success(auth_response)
+    def after_authentication_success(_auth_response)
       # App logic goes here
       redirect_to root_path
     end
 
-    def after_authentication_failure(auth_response)
+    def after_authentication_failure(_auth_response)
       # App logic goes here
       redirect_to root_path
     end
-    # rubocop:enable Lint/UnusedMethodArgument
   end
 end

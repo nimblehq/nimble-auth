@@ -1,4 +1,4 @@
-module BuriAuth
+module NimbleAuth
   module OmniauthHelper
     module_function
 
@@ -15,7 +15,7 @@ module BuriAuth
     #   Eg: facebook_authorize_path, instagram_authorize_path
     #
     def generate_omniauth_url_helpers(provider)
-      BuriAuth::Engine.helpers.module_eval do
+      NimbleAuth::Engine.helpers.module_eval do
         define_method "#{provider}_authorize_path" do |*arg|
           query_params = arg.first
 
@@ -40,7 +40,7 @@ module BuriAuth
     end
 
     def auth_url_helpers
-      BuriAuth::Engine.routes.url_helpers
+      NimbleAuth::Engine.routes.url_helpers
     end
 
     def devise_provider_strategy(provider)

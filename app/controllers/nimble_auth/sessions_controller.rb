@@ -1,4 +1,4 @@
-module BuriAuth
+module NimbleAuth
   class SessionsController < Devise::SessionsController
     # In Rails 5, `protect_from_forgery` is no longer prepended to the `before_action` chain,
     # so using `authenticate_user` before `protect_from_forgery` results in "Can't verify CSRF token authenticity."
@@ -14,11 +14,11 @@ module BuriAuth
 
     private
 
-    def after_sign_in_redirect_path(_)
+    def after_sign_in_redirect_path(_resource)
       root_path
     end
 
-    def after_sign_out_redirect_path(_)
+    def after_sign_out_redirect_path(_resource)
       new_user_session_path
     end
 

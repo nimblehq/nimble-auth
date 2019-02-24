@@ -1,10 +1,10 @@
-module BuriAuth
+module NimbleAuth
   module User
     module_function
 
     def extend_model
       # Extend the parent Model class
-      BuriAuth.configuration.resource_class.constantize.class_eval do
+      NimbleAuth.configuration.resource_class.constantize.class_eval do
         has_many :identities, dependent: :destroy
 
         validates :email, presence: true
@@ -16,7 +16,7 @@ module BuriAuth
                :rememberable,
                :confirmable,
                :omniauthable,
-               omniauth_providers: BuriAuth.config.omniauth_providers
+               omniauth_providers: NimbleAuth.configuration.omniauth_providers
 
         def self.with_oauth(oauth)
           find_by(email: oauth[:info]['email'])

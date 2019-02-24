@@ -23,12 +23,12 @@ Metrics/LineLength:
   Max: 120
   Exclude:
     - 'spec/**/*'
-    - 'lib/buri_auth/**/*'
+    - 'lib/nimble_auth/**/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'lib/buri_auth/**/*'
+    - 'lib/nimble_auth/**/*'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -38,8 +38,8 @@ Style/AsciiComments:
 
 Metrics/MethodLength:
   Exclude:
-    - 'lib/buri_auth/**/*'
+    - 'lib/nimble_auth/**/*'
 
 Metrics/AbcSize:
   Exclude:
-    - 'lib/buri_auth/**/*'
+    - 'lib/nimble_auth/**/*'
