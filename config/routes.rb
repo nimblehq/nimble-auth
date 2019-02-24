@@ -3,24 +3,24 @@
 require_relative '../lib/nimble_auth/devise_custom_failure'
 
 NimbleAuth::Engine.routes.draw do
-  CUSTOM_CONTROLLERS = {
-    omniauth_callbacks: 'nimble_auth/omniauth_callbacks',
-    sessions: 'nimble_auth/sessions'
-  }.freeze
-
-  CUSTOM_PATH = {
-    sign_in: 'signin',
-    sign_up: 'signup',
-    sign_out: 'signout'
-  }.freeze
-
   if NimbleAuth.configuration.resource_class.present?
     # ==> Mount Devise Engine
     devise_for NimbleAuth.configuration.resource_class.pluralize.downcase.to_sym,
                module: :devise,
                path: '/',
                class_name: NimbleAuth.configuration.resource_class,
-               controllers: CUSTOM_CONTROLLERS,
-               path_names: CUSTOM_PATH
+               controllers: {
+                 omniauth_callbacks: 'nimble_auth/omniauth_callbacks',
+                 sessions: 'nimble_auth/sessions'
+               },
+               path_names: {
+                 sign_in: 'signin',
+                 sign_up: 'signup',
+                 sign_out: 'signout'
+               }
+
+    devise_scope :user do
+      get '/signout', to: 'sessions#destroy', as: :user_logout
+    end
   end
 end
