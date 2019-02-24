@@ -1,27 +1,32 @@
 module NimbleAuth
-  module OmniauthHelper
+  module Omniauth
     module_function
 
-    # Add extra configurations to omniauth providers
-    def configure_omniauth_provider(provider)
-      generate_omniauth_url_helpers(provider)
-      append_omniauth_callback_path(provider)
+    def configure_providers
+      # Refresh the loaded routes with appended omninauth paths
+      Rails.application.reload_routes!
+
+      NimbleAuth.configuration.omniauth_providers.each do |provider|
+        generate_omniauth_path_helpers(provider)
+        append_omniauth_callback_path(provider)
+      end
     end
 
     # Generates url helpers for oauth providers.
-    # Adds the helpers to `Engine` helpers to make it accessible in other parts of app.
+    # Adds the helpers to `Engine` helpers to make it accessible in other parts of the app.
     #
     # Helper Format: [:provider]_authorize_path
     #   Eg: facebook_authorize_path, instagram_authorize_path
     #
-    def generate_omniauth_url_helpers(provider)
+    def generate_omniauth_path_helpers(provider)
       NimbleAuth::Engine.helpers.module_eval do
         define_method "#{provider}_authorize_path" do |*arg|
           query_params = arg.first
+          omniauth_provider_path = "#{OmniAuth.config.path_prefix}/#{provider}"
 
-          return "#{OmniAuth.config.path_prefix}/#{provider}" if query_params.blank?
+          return omniauth_provider_path.to_s if query_params.blank?
 
-          "#{OmniAuth.config.path_prefix}/#{provider}?#{query_params.to_query}"
+          "#{omniauth_provider_path}?#{query_params.to_query}"
         end
       end
     end
