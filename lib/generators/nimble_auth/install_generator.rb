@@ -36,7 +36,7 @@ module NimbleAuth
 
     def add_initializer_template
       say('Adding Initializer Template in Rails Config', Thor::Shell::Color::GREEN)
-      copy_file 'initializer.rb', 'config/initializers/NimbleAuth.rb'
+      copy_file 'initializer.rb', 'config/initializers/nimble_auth.rb'
       say('Replace the Omniauth credentials to valid ones', Thor::Shell::Color::RED)
     end
 
