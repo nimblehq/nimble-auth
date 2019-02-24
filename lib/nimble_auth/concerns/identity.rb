@@ -1,13 +1,12 @@
 module NimbleAuth
-  module Identity
-    module_function
+  module Concerns
+    module Identity
+      extend ActiveSupport::Concern
 
-    def extend_model
-      # Extend the parent Model class
-      NimbleAuth.configuration.resource_identity_class.constantize.class_eval do
+      included do
         belongs_to :user
 
-        validates :uid, :provider, :user, presence: true
+        validates :uid, :provider, :oauth_token, presence: true
 
         class << self
           def create_for(oauth:, user:)

@@ -1,13 +1,12 @@
 module NimbleAuth
-  module User
-    module_function
+  module Concerns
+    module User
+      extend ActiveSupport::Concern
 
-    def extend_model
-      # Extend the parent Model class
-      NimbleAuth.configuration.resource_class.constantize.class_eval do
+      included do
         has_many :identities, dependent: :destroy
 
-        validates :email, presence: true
+        validates :first_name, :last_name, :email, presence: true
         validates :email, uniqueness: true
 
         devise :database_authenticatable,
