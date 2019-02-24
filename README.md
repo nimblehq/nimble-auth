@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <a href='https://semaphoreci.com/nimblehq/nimble-auth'> <img src='https://semaphoreci.com/api/v1/nimblehq/nimble-auth/branches/development/badge.svg' alt='Build Status'></a>
+    <a href='https://semaphoreci.com/nimble/nimble-auth'> <img src='https://semaphoreci.com/api/v1/nimble/nimble-auth/branches/development/badge.svg' alt='Build Status'></a>
 </p>
 
 ---
