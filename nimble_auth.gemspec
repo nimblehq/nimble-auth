@@ -5,7 +5,7 @@ require 'nimble_auth/version'
 Gem::Specification.new do |s|
   s.name        = 'nimble-auth'
   s.version     = NimbleAuth::VERSION
-  s.authors     = ['Olivier Robert']
+  s.authors     = ['Olivier Robert', 'Abhinav Mishra']
   s.email       = ['dev@nimblehq.com']
   s.homepage    = 'https://github.com/nimblehq/nimble-auth'
   s.summary     = 'Re-usable Devise-based authentication mountable engine'
