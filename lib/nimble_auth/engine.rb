@@ -16,9 +16,21 @@ module NimbleAuth
       g.helper false
     end
 
-    initializer 'nimble_auth.action_controller' do
-      ActiveSupport.on_load :action_controller do
-        helper NimbleAuth::Engine.helpers
+    # Extend models in the main app safely
+    config.to_prepare do
+      NimbleAuth::Resource.extend_user_model
+      NimbleAuth::Resource.extend_identity_model
+    end
+
+    config.after_initialize do
+      if NimbleAuth.configuration.omniauth_providers.any?
+        NimbleAuth::Omniauth.configure_providers
+
+        # FIXME: Due to the way omninauth updates routes, the user model needs to be extended from the engine routes
+        # as config.to_prepare block is called after the routes are reloaded (affect dev and test environments)
+        NimbleAuth::Engine.routes.prepend do
+          NimbleAuth::Resource.extend_user_model
+        end
       end
     end
   end

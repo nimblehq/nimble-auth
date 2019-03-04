@@ -13,6 +13,6 @@ class CreateIdentities < ActiveRecord::Migration[5.1]
       t.belongs_to :user, foreign_key: true
     end
 
-    add_index :identities, [:provider, :uid], unique: true
+    add_index :identities, [:provider, :uid]
   end
 end

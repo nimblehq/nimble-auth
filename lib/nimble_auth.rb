@@ -1,9 +1,8 @@
 # Override the standard devise views by requiring 'devise' before the engine
 require 'nimble_auth/engine'
-require 'nimble_auth/omniauth_helper'
 require 'nimble_auth/devise_setup'
-require 'nimble_auth/user'
-require 'nimble_auth/identity'
+require 'nimble_auth/resource_setup'
+require 'nimble_auth/omniauth'
 
 module NimbleAuth
   class Configuration
@@ -34,17 +33,15 @@ module NimbleAuth
     end
 
     def valid?
-      resource_class.present? && resource_identity_class.present?
+      resource_class.present? && resource_class_defined?
     end
 
     private
 
     def resource_class_defined?
-      Object.const_defined?("::#{resource_class}")
-    end
-
-    def resource_identity_class_defined?
-      Object.const_defined?("::#{resource_identity_class}")
+      resource_class.constantize.present?
+    rescue StandardError
+      false
     end
   end
 
@@ -54,27 +51,12 @@ module NimbleAuth
 
   module_function
 
-  # TODO: Rename to configure
   def setup
     self.configuration = Configuration.new
     yield(configuration)
 
-    after_setup
-  end
-
-  def after_setup
     return unless configuration.valid?
 
-    extend_models
-    setup_devise
-  end
-
-  def extend_models
-    NimbleAuth::User.extend_model if NimbleAuth.configuration.resource_class.present?
-    NimbleAuth::Identity.extend_model if NimbleAuth.configuration.resource_identity_class.present?
-  end
-
-  def setup_devise
     NimbleAuth::DeviseSetup.setup_with(configuration)
   end
 end

@@ -16,7 +16,7 @@ RSpec.describe NimbleAuth.configuration.resource_identity_class.constantize, typ
   describe 'validations' do
     it { should validate_presence_of(:uid) }
     it { should validate_presence_of(:provider) }
-    it { should validate_presence_of(:user) }
+    it { should validate_presence_of(:oauth_token) }
   end
 
   describe '.create_for' do
