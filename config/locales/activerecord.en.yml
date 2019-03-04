@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    notices:
+      models:
+        user:
+          create: Your account was created successfully.
+        identity:
+          create_for_existing_user: New credentials added to your existing account.
+    errors:
+      messages:
+        omniauth:
+          authentication_failure: "%{title}: %{description} due to %{reason}."
+          onboarding_failure: "An account has not been yet created for '%{email}'"

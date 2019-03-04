@@ -1,0 +1,48 @@
+{
+  "provider": "google_oauth2",
+  "uid": "117222194916469421589",
+  "info": {
+    "name": "Joe Bloggs",
+    "email": "joe@bloggs.com",
+    "first_name": "Joe",
+    "last_name": "Bloggs",
+    "image": "https://lh3.googleusercontent.com/-anvrxrTXT50/AAAAAAAAAAI/AAAAAAAACok/CxizeNRcYLY/photo.jpg",
+    "urls": {
+      "Google": "https://plus.google.com/+JoeBloggs"
+    }
+  },
+  "credentials": {
+    "token":
+    "ya29.GmcrBH1NTfZBrrxDaK4DxvIMLpJ5fXwWVat-jc3HOsHXltTx75Hz1roTVUzfCfd5J8IPIzsWkjeMHMRtSJDnKbs8_2s3VuOsil0dZq22YA9FqcnAcXJFNCWNWqN1ra3pSgPQyz-YP2r9",
+    "expires_at": 1491988830,
+    "expires": true
+  },
+  "extra": {
+    "id_token":
+    "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRmYTBlM2FmMGM0NjQ0MDRjM2VhNzk1Mjk1Mzg2NDVlNTYyNWVlZjMifQ.eyJhenAiOiIzMjIxMzc4NjI0MjQtbXFyZnBhOGlvdjhlOTk0Z29tcDE2djJqMzZpbDhxYmIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIzMjIxMzc4NjI0MjQtbXFyZnBhOGlvdjhlOTk0Z29tcDE2djJqMzZpbDhxYmIuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTcyMjIxOTQ5MTY0Njk0MjE1ODkiLCJlbWFpbCI6Im1ha2Vhd2lzaDg4MEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Im51T1pTMlFOSnlxZHNsUG5ud0ItZmciLCJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDkxOTg1MjMzLCJleHAiOjE0OTE5ODg4MzN9.NgPhYfDfGosLa4oLciGa06n_SOKK_Wb94Ryb8yp8z4BFzBsBG7bVOOvYMYMi4h2GONZ9wSHFNIT4pkenuYI0Ng8mdsd0nuQ6ksLz5KCnO72FVqWDjq8O0LL-kq8-JgoPQ5S-xBoVD1gfDRQfQeEDTUPeqIGt_bIp_enxQt9pLzKyMW57HV6Ckla_4UBMUMWonfLFwK9sfeiV8BomnVNxetLQ2v2FBqGOyewsmzeVPMZPGr9Ry7VRCktmJ3s2-wgJO7_ibiyu7M7Oh2RNFQc-IjxPqbudG0sNeAavGMkhXYhuF-fI8JFWzFT9tRNLQ3nAv6234OsHEMceHzvvuiq0nQ",
+    "id_info": {
+      "azp": "322137862424-mqrfpa8iov8e994gomp16v2j36il8qbb.apps.googleusercontent.com",
+      "aud": "322137862424-mqrfpa8iov8e994gomp16v2j36il8qbb.apps.googleusercontent.com",
+      "sub": "117222194916469421589",
+      "email": "joe@bloggs.com",
+      "email_verified": true,
+      "at_hash": "nuOZS2QNJyqdslPnnwB-fg",
+      "iss": "accounts.google.com",
+      "iat": 1491985233,
+      "exp": 1491988833
+    },
+    "raw_info": {
+      "kind": "plus#personOpenIdConnect",
+      "gender": "male",
+      "sub": "117222194916469421589",
+      "name": "Joe Bloggs",
+      "given_name": "Joe",
+      "family_name": "Bloggs",
+      "profile": "https://plus.google.com/+JoeBloggs",
+      "picture": "https://lh3.googleusercontent.com/-anvrxrTXT50/AAAAAAAAAAI/AAAAAAAACok/CxizeNRcYLY/photo.jpg?sz=50",
+      "email": "joe@bloggs.com",
+      "email_verified": "true",
+      "locale": "en"
+    }
+  }
+}

@@ -1,15 +1,23 @@
-# BuriAuth
+<p align="center">
+    <strong>Nimble Auth - Modern ready-to-use auhentication engine</strong>
+</p>
+
+<p align="center">
+    <a href='https://semaphoreci.com/nimble/nimble-auth'> <img src='https://semaphoreci.com/api/v1/nimble/nimble-auth/branches/development/badge.svg' alt='Build Status'></a>
+</p>
+
+---
 
 In each project, authentication is almost always required and Devise is almost always the go-to gem to implement such 
 functionality. While Devise is easy to use and configure, its codebase lives in the core of the application and often needs 
-tinkering. So this `gem` is modular approach to provide a ready-to-use authentication in any Ruby on Rails application. 
+tinkering. So this `gem` is a modular approach to provide a ready-to-use authentication module in any Ruby on Rails application. 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'buriauth'
+gem 'nimble-auth'
 ```
 
 And then execute:
@@ -21,35 +29,32 @@ $ bundle
 Or install it yourself as:
 
 ```bash
-$ gem install buriauth
+$ gem install nimble-auth
 ```
 
 ## Usage
 
-* Mounted into the host application:
-
-```ruby
-# config/routes.rb
-Rails.application.routes.draw do
-  mount BuriAuth::Engine, at: '/'
-
-  root 'dashboard#index'
-end
+* Setup Nimble Auth
+```
+rails generate nimble_auth:install
+rake db:migrate
 ```
 
 ## License
 
-This project is Copyright (c) 2014-2017 Nimbl3 Ltd. It is free software,
-and may be redistributed under the terms specified the [LICENSE] file.
+This project is Copyright (c) 2014-2019 Nimble. It is free software,
+and may be redistributed under the terms specified in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
 
 ## About
 
-![Nimbl3](https://dtvm7z6brak4y.cloudfront.net/logo/logo-repo-readme.jpg)
+![Nimble](https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png)
 
-This project is maintained and funded by Nimbl3 Ltd.
+This project is maintained and funded by Nimble.
 
 We love open source and do our part in sharing our work with the community!
 See [our other projects][community] or [hire our team][hire] to help build your product.
 
-[community]: https://github.com/nimbl3
-[hire]: https://nimbl3.com/
+[community]: https://github.com/nimblehq
+[hire]: https://nimblehq.co/

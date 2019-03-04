@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount BuriAuth::Engine, at: '/'
+  mount NimbleAuth::Engine, at: '/auth'
 end

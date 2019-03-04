@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.10/me?access_token=EAAES01lers8BAG7KQ9iTQ4NLzEVMSnH6l9L9nZCI57qwIsUttZAgnE1XLEkMtZBZAnCBpE4YeYJaZCbuS2JngvTAZAATPL3D4yZCZCWlQviyCqjlr2ZAf1nUyNGkU91lkUpRhJSkOCwq5K010GRxcSb1qbpWbulNh3ZBI9fKLHzgwk2AZDZD&fields=id,email,name,location,birthday,picture
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.5.0 x86_64) ruby/2.3.1p112
+      Host:
+      - graph.facebook.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"72007c6117f1d794b4a8d10db93f003379da9fd5"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Fb-Rev:
+      - '3176548'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - H8I2BzsrZYN
+      Facebook-Api-Version:
+      - v2.10
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      X-Fb-Debug:
+      - CFtXuz5en5Psqj2X98Q08oi8L4r4XeW+3OK6HNJPH7RS5wlATDeu/2YoVb274X4V3hg7Es4yboT69qs0HaUIZQ==
+      Date:
+      - Tue, 25 Jul 2017 02:32:33 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '308'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA0WPvU7DMBhFXwV9A1Nw/B87UoWoEBsbo6XISdzGJLGr2ClF
+        Vd4dhQGGM95zdO/ge6iBECy1ZJWUWHFKBRTgZusnqGG2o7NfPg1KKGpWjDmO
+        a55iHFEXZygg2NlBDS/t4IO9Prz7NCwWCphiZ7OPAer7X0QoobmQVDHG/6dH
+        G85jHIuHj8H6yYYetgJav+Sht99QA6amJDtaUyjg4ru8Lm739jbbX39qkp+G
+        uLqcHdQnOyVXwLrsB4acL6k2pSlTF0N2IaPbDZ3arg8ouGzKqykzQfiJmLKj
+        AlGBGME7pkwC3wQ2pdCacdpQqalUlWREVVhWDSGcK601bgL6vJyf43BQlmBN
+        WCUEJZq1zGnZWq46WRHdM0EeozsI/caOr4zBtm0/mWzVIYEBAAA=
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 02:32:31 GMT
+recorded_with: VCR 3.0.3

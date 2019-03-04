@@ -10,6 +10,7 @@ AllCops:
     - 'Guardfile'
     - 'config/**/*'
     - 'spec/dummy/**/*'
+    - 'lib/generators/**/*'
   TargetRubyVersion: 2.4
 
 Rails:
@@ -22,13 +23,23 @@ Metrics/LineLength:
   Max: 120
   Exclude:
     - 'spec/**/*'
+    - 'lib/nimble_auth/**/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'lib/nimble_auth/**/*'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/AsciiComments:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/nimble_auth/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/nimble_auth/**/*'

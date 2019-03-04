@@ -1,0 +1,26 @@
+.auth-card {
+  padding: 1rem;
+
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 0.875rem 0 rgba(0, 0, 0, 0.2);
+
+  @include media-breakpoint-up('sm') {
+    padding: 2rem;
+  }
+
+  &__header {
+    margin-bottom: 1.875rem;
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &__provider {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

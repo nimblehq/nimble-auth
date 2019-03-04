@@ -1,0 +1,69 @@
+form {
+  background: #fff;
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  legend {
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.33;
+
+    @include media-breakpoint-up('lg') {
+      font-size: 1.75rem;
+      line-height: 1.3928;
+      background-color: transparent;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: $input-base-font-weight;
+    line-height: 0.875;
+    color: map-get($brand-gray, 'lightest');
+    text-transform: uppercase;
+  }
+
+  input:not([type=submit]),
+  input:not([type=checkbox]),
+  input:not([type=radio]),
+  textarea {
+    @include placeholder {
+      color: map-get($brand-gray, 'light');
+    };
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: $input-base-padding-y $input-base-padding-x;
+    
+    font-size: $input-base-font-size;
+    font-weight: $input-base-font-weight;
+    line-height: $input-base-line-height;
+
+    color: map-get($brand-gray, 'dark');
+    border: 2px solid map-get($brand-gray, 'primary');
+    border-radius: $input-border-radius;
+
+    &:focus {
+      border-color: map-get($brand-accent, 'primary');
+      outline: none;
+    }
+  }
+
+  input[type=checkbox],
+  input[type=checkbox] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+    textarea {
+    min-height: 10rem;
+  }
+}
